@@ -1,5 +1,5 @@
 # turf-league-match-highlights-generator
-This project aims to develop an automated football match highlight generation system leveraging computer vision and machine learning. The system will process raw video footage and output dynamic highlights that focus on regions of high ball activity, using object detection, tracking, and event detection algorithms. Key components include ball and player detection, motion tracking, and automated clip extraction.
+This project aims to develop an automated football match highlight generation system leveraging computer vision and machine learning. The system will process raw video footage and output dynamic highlights that focus on regions of high ball activity, using object detection, tracking, and event detection algorithms. Key components include ball and player detection, motion tracking, and automated clip extraction.\n 
 Phase 1: Project Setup & Data Collection
 Duration: 1–2 weeks
 Objectives:
