@@ -1,97 +1,87 @@
-# turf-league-match-highlights-generator
-This project aims to develop an automated football match highlight generation system leveraging computer vision and machine learning. The system will process raw video footage and output dynamic highlights that focus on regions of high ball activity, using object detection, tracking, and event detection algorithms. Key components include ball and player detection, motion tracking, and automated clip extraction.\n 
-Phase 1: Project Setup & Data Collection
-Duration: 1–2 weeks
-Objectives:
-Define scope (e.g., highlight only ball-centric actions or also goals, passes, fouls).
-Set up development environment.
-Tasks:
-Environment setup:
-Python, OpenCV, PyTorch/TensorFlow
-MoviePy, FFmpeg for video handling
-Hardware setup:
-GPU-enabled workstation or cloud GPU (AWS, GCP, or Azure)
-Data collection:
-Download football match datasets (SoccerNet, OpenFooty, etc.)
-Extract relevant videos and frames
-Optional: start annotating custom dataset for ball and player positions
-Version control:
-Git/GitHub repository with structured folders (data, models, scripts, outputs)
-Milestones:
-Development environment ready
-Dataset acquired and organized
-Phase 2: Ball & Player Detection
-Duration: 2–3 weeks
-Objectives:
-Detect the ball and players in each frame with high accuracy.
-Tasks:
-Model selection & training:
-Start with pre-trained models (YOLOv8, Detectron2)
-Fine-tune on football dataset for ball and player detection
-Video preprocessing:
-Frame extraction
-Resize, normalize, or enhance frames for detection
-Evaluation metrics:
-mAP (Mean Average Precision), precision/recall for ball and player detection
-Milestones:
-Model can accurately detect ball and players in sample videos
-Performance metrics logged
-Phase 3: Ball & Player Tracking
-Duration: 2 weeks
-Objectives:
-Track ball and player movement across frames for highlight detection.
-Tasks:
-Tracking algorithm:
-Multi-object tracking using Deep SORT, ByteTrack, or OpenCV trackers
-Trajectory generation:
-Maintain ball trajectory and regions of high activity
-Visual validation:
-Overlay tracks on videos to verify accuracy
-Milestones:
-Consistent ball and player tracking across entire match videos
-Tracking data stored for downstream highlight detection
-Phase 4: Highlight Identification
-Duration: 2–3 weeks
-Objectives:
-Identify clips of interest based on ball activity and events.
-Tasks:
-Event detection:
-Define “highlight zones” using ball density or player proximity
-Optional: detect goals, shots, passes using heuristics or action recognition models
-Clip extraction:
-Automatically segment video based on detected highlights
-Use FFmpeg/MoviePy for clipping and stitching
-Evaluation metrics:
-Temporal overlap with manually selected highlights
-Number of false positives/negatives
-Milestones:
-Automated clips of high ball activity extracted
-Clips validated for relevance
-Phase 5: Post-processing & Visualization
-Duration: 1–2 weeks
-Objectives:
-Produce polished highlight videos with optional overlays.
-Tasks:
-Overlay enhancements:
-Ball trajectory lines, heatmaps, player bounding boxes
-Audio/video merging:
-Optionally integrate commentary or crowd sounds
-Output formats:
-MP4, GIF, or web-embeddable clips
-Milestones:
-Clean, viewer-ready highlight videos
-Optional interactive dashboard for reviewing clips
-Phase 6: Optional Advanced Enhancements
-Duration: 2–4 weeks
-Objectives:
-Add intelligence and interactivity to the system.
-Tasks:
-Action recognition:
-Detect passes, fouls, tackles, and goals
-Use models like I3D, SlowFast, or Video Swin Transformer
-Analytics:
-Generate heatmaps of ball movement, player density, or high-activity regions
-UI/UX:
-Web or desktop dashboard for coaches or analysts
-Milestones:
-Intelligent, interactive highlight system ready for end-users
+
+
+# Turf League Match Highlights Generator
+
+This project aims to develop an **automated football match highlight generation system** leveraging **computer vision and deep learning**. The system processes **raw match footage** and outputs **dynamic highlights focusing on regions of high ball activity**, using **object detection, tracking, and event detection algorithms**.
+
+---
+
+## 🚀 Project Roadmap
+
+### **Phase 1: Project Setup & Data Collection**
+**Duration:** 1–2 weeks  
+- Set up Python environment with OpenCV, PyTorch/TensorFlow, MoviePy, FFmpeg.  
+- Configure GPU-enabled workstation or cloud GPU for deep learning.  
+- Collect datasets: SoccerNet, OpenFooty, and custom annotated clips.  
+- Organize data: raw videos, frames, and annotations.  
+- Initialize Git repository with structured folders: `data/`, `models/`, `scripts/`, `outputs/`.  
+
+**Milestone:** Environment ready and dataset collected.
+
+---
+
+### **Phase 2: Ball & Player Detection**
+**Duration:** 2–3 weeks  
+- Implement **ball detection** using color + shape or deep learning.  
+- Implement **player detection** using YOLOv8 or Detectron2.  
+- Preprocess video: frame extraction, resizing, normalization.  
+- Evaluate detection performance: precision, recall, mAP.  
+
+**Milestone:** Accurate detection of balls and players in sample videos.
+
+---
+
+### **Phase 3: Ball & Player Tracking**
+**Duration:** 2 weeks  
+- Implement **multi-object tracking** (Deep SORT / ByteTrack / OpenCV trackers).  
+- Generate **trajectories** for ball and players.  
+- Visualize and validate tracking performance.  
+
+**Milestone:** Reliable tracking across video frames.
+
+---
+
+### **Phase 4: Highlight Identification**
+**Duration:** 2–3 weeks  
+- Define **highlight zones** based on ball density or player proximity.  
+- Optional: detect specific events like goals, passes, or shots on target.  
+- Extract **highlight clips** using FFmpeg or MoviePy.  
+- Evaluate temporal accuracy of extracted highlights.  
+
+**Milestone:** Automated clips of high ball activity generated.
+
+---
+
+### **Phase 5: Post-processing & Visualization**
+**Duration:** 1–2 weeks  
+- Overlay ball trajectories, player bounding boxes, and heatmaps.  
+- Merge audio (commentary/crowd reactions) if available.  
+- Export polished highlight videos in MP4 or GIF formats.  
+
+**Milestone:** Viewer-ready, visually enhanced highlight videos.
+
+---
+
+### **Phase 6: Optional Advanced Enhancements**
+**Duration:** 2–4 weeks  
+- Implement **action recognition**: passes, tackles, fouls, goals using I3D or Video Swin Transformer.  
+- Generate **analytics**: ball movement heatmaps, player density, high-activity zones.  
+- Develop **UI dashboard**: interactive highlight review tool using Streamlit or Gradio.  
+
+**Milestone:** Intelligent and interactive highlight system ready for end-users.
+
+---
+
+## **Tools & Libraries**
+- **Computer Vision / Deep Learning:** OpenCV, PyTorch, TensorFlow, YOLOv8, Detectron2  
+- **Tracking:** Deep SORT, ByteTrack  
+- **Video Processing:** MoviePy, FFmpeg  
+- **Dataset:** SoccerNet, OpenFooty, custom annotations  
+- **Optional UI:** Streamlit, Gradio  
+
+---
+
+## **Next Steps**
+- Integrate detection, tracking, and highlight extraction into a single pipeline.  
+- Fine-tune models on football-specific datasets.  
+- Add sample videos and demo outputs to GitHub for showcase.  
